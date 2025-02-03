@@ -1,0 +1,53 @@
+{
+
+  "name": "categoricalnotetree",
+
+  "version": "1.0.0",
+
+  "main": "index.js",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  "keywords": [],
+
+  "author": "",
+  
+  "license": "ISC",
+
+  "bin": {
+
+    "ctadd": "./commands/add.js",
+    "ctdelete": "./commands/delete.js",
+    "ctedit": "./commands/edit.js",
+    "ctfor": "./commands/forward.js",
+    "ctback": "./commands/backward.js",
+    "ctroot": "./commands/root.js",
+    "ctgoto": "./commands/goto.js",
+    "ctlist": "./commands/list.js",
+    "ctcurr": "./commands/showPlace.js",
+    "cthelp": "./commands/help.js", 
+    "ctmove": "./commands/move.js", 
+    "ctfind": "./commands/find.js",
+    "ctrename": "./commands/renameCategory.js", 
+    "ctstateChange": "./commands/stateChange.js", 
+    "ctmoveNodeIntoSamePath": "./commands/stateMoveInside.js", 
+
+    "cthistoryBack": "./commands/historyMoveBackward.js",
+    "cthistoryFor": "./commands/historyMoveForward.js",
+    "cthistoryRevert": "./commands/historyRevert.js", 
+    "cthistoryResetIndex": "./commands/historyResetHistoricalIndex.js", 
+
+    "cttreeAdd": "./commands/treeAdd.js", 
+    "cttreeList": "./commands/treeList.js",
+    "cttreeSelect": "./commands/treeSelect.js",
+    "cttreeDelete": "./commands/treeDelete.js", 
+
+    "ctllmFeed": "./commands/llmFeed.js"
+
+  },
+
+  "description": "categorical note tree. Run <sudo npm install -g> to install globally"
+
+}
