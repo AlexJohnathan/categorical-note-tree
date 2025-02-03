@@ -235,12 +235,7 @@ function add(args) {
 
     current[title] =  { 
         [hashKey]: { 
-            hitCount: 0, 
-            description: description, 
-            file: '', 
-            executable: false, 
-            responses: [], 
-            nextServer: false 
+            description: description
         }
     } 
 
@@ -430,12 +425,7 @@ function moveTrunk(path) {
         categoricalNoteTree = current
 
         current[hashKey] = { 
-            hitCount: 0, 
-            description: treeDataRef.selectedTree, 
-            file: '', 
-            executable: false, 
-            responses: [], 
-            nextServer: false
+            description: treeDataRef.selectedTree 
         }
         
     }
@@ -763,12 +753,7 @@ function addTree(args) {
 
     let categoricalNoteTree = JSON.stringify({
         [hashKey]: { 
-            hitCount: 0, 
-            description: treeName, 
-            file: '', 
-            executable: false, 
-            responses: [], 
-            nextServer: false
+            description: treeName
         }
     }, null, 4)
 
