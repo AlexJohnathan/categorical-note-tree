@@ -44,8 +44,6 @@
     "cttreeSelect": "./commands/treeSelect.js",
     "cttreeDelete": "./commands/treeDelete.js", 
 
-    "ctllmFeed": "./commands/llmFeed.js"
-
   },
 
   "description": "categorical note tree. Run <sudo npm install -g> to install globally"
