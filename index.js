@@ -26,11 +26,6 @@ function readFromFileTreeData() {
 
 /*
     read-write files
-
-    @param treeDataRef 
-    -avoids reading treedata more than once in each function
-    -used in all command functions and not in tree functions
-
 */
 
 let treeDataRef
@@ -110,8 +105,7 @@ function stateChange(args) {
 }
 
 /*
-    gets the object requested in the tree
-    maybe best option would be to save as a string then use eval
+    gets the path object in the tree - use string eval
 */
 
 function referenceObject(current, refIndex, editReference) {  
@@ -129,7 +123,7 @@ function referenceObject(current, refIndex, editReference) {
 }
 
 /*
-    lists the contents of the tree at the first or second level
+    lists the contents of the tree at the current node
 */
 
 function listTreeNode(ref, editReference) { 
@@ -164,7 +158,7 @@ function showPlace() {
 }
 
 /*
-    resets the current node root and is read
+    resets the current node to the root of the tree
 */
 
 function refresh() { 
@@ -249,7 +243,6 @@ function add(args) {
 
 /*
     removes the current node
-    @param removal : key neccessary for removal
 */
 
 function remove() {
@@ -259,7 +252,7 @@ function remove() {
     }
 
     if(data.editReference.length === 0) {
-        console.log('Must call a specific function <ctremoveTree> to remove the tree in trees folder')
+        console.log('Must call a specific function <cttreeDelete> to remove the tree in trees folder')
         return
     }
 
@@ -327,21 +320,7 @@ function edit(args) {
 }
 
 /*
-
-    moves current node
-
-    @param current : one behind the object to be moved : mandatory key (categoryKey) so that the object can be identified and functionally removed
-    @param copyIntoPath : the object to copy into
-    @param movebackdelete : if the copy-into-path is inside the object to be moved, must move back key
-    @param categoryKey is used for a few different things like removing, and determining if in root 
-
-    if(
-        path.length > data.editReference.length && 
-        data.editReference.join() === path.slice(0, data.editReference.length).join()
-    ) { 
-        moveBackBeforeDelete = true
-    }
-
+    moves current node into the input path
 */
 
 function moveTrunk(path) {
@@ -402,14 +381,6 @@ function moveTrunk(path) {
         console.log('an object with that category already exists at that location')
         return
     }
-
-    /*
-        1. make copy of moving-object
-        2. place copy into the copy-into-path
-        3. delete the moving-object - might delete the copy-into path... thats why a copy is made
-        4. if copying deeper into the same path including copying the root, must bring the copy-into-path object back
-        5. note - maybe merge copy-into-path with movingObjectCopy if moving the root
-    */
 
     let movingObjectCopy = JSON.parse(JSON.stringify(categoryKey ? current[categoryKey] : current)) 
 
@@ -543,7 +514,7 @@ function resetHistoricalIndex() {
 }
 
 /*
-    returns all paths which contain the input search string
+    returns all paths that contain the input search string in the description
 */
 
 function find(args) {
