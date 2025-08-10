@@ -1,8 +1,4 @@
 
-/*
-    description: command line categorical note tree
-    Author: Alexander Eatman
-*/
 
 const fs = require('node:fs')
 const path = require('path')
